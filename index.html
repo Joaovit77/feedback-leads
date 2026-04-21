@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback de Leads</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+  <header>
+    <span class="logo">📋 Feedback de Leads</span>
+  </header>
+
+  <main>
+    <div class="card">
+
+      <h2 class="section-label">Informações do relatório</h2>
+      <div class="grid2">
+        <div class="field"><label>Corretor / Responsável</label><input type="text" id="fb-corretor"
+            placeholder="Seu nome" /></div>
+        <div class="field"><label>Data do relatório</label><input type="date" id="fb-data" /></div>
+        <div class="field full"><label>Observações gerais</label><input type="text" id="fb-obs-geral"
+            placeholder="Ex: Semana de alta demanda, feirão imobiliário..." /></div>
+      </div>
+
+      <h2 class="section-label" style="margin-top:1.5rem;">Imóveis</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">
+        Informe a referência de cada imóvel, sua situação e o resultado de cada lead contatado.
+      </p>
+
+      <div id="fb-entradas"></div>
+
+      <button class="btn-add-entrada" onclick="adicionarEntrada()">+ Adicionar imóvel</button>
+
+      <div class="form-footer">
+        <button class="btn-secondary" onclick="limpar()">Limpar tudo</button>
+        <button class="btn-primary" onclick="gerarPDF()">⬇ Gerar PDF</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

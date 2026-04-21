@@ -1,0 +1,337 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f5f3;
+    --surface: #fff;
+    --border: #e2e2df;
+    --border-strong: #c8c8c4;
+    --text: #1a1a18;
+    --muted: #6b6b68;
+    --hint: #9b9b98;
+    --radius: 8px;
+    --radius-lg: 12px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+}
+
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.section-label:first-child {
+    margin-top: 0;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 560px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: 1;
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.field label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+input[type=text],
+input[type=date],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--surface);
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--border-strong);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+    background: var(--text);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 9px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-secondary:hover {
+    background: var(--bg);
+}
+
+.btn-add-entrada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 8px;
+    background: none;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-lg);
+    padding: 11px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.btn-add-entrada:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.btn-add-lead {
+    width: 100%;
+    margin-top: 8px;
+    background: none;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 7px;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.btn-add-lead:hover {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.btn-remover {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--hint);
+    font-size: 20px;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: var(--radius);
+    transition: color 0.15s, background 0.15s;
+    flex-shrink: 0;
+}
+
+.btn-remover:hover {
+    color: #DC2626;
+    background: #FEF2F2;
+}
+
+/* ===== ENTRADA DE IMÓVEL ===== */
+.fb-entrada {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.fb-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.fb-num {
+    background: var(--text);
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.fb-ref-input {
+    flex: 1;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    font-weight: 600 !important;
+}
+
+.fb-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.fb-meta .field {
+    flex: 1;
+}
+
+.fb-motivo {
+    margin-bottom: 10px;
+}
+
+.fb-motivo input {
+    border-left: 3px solid #FBBF24;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: #FFFBEB;
+}
+
+.fb-leads-titulo {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.fb-lead-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+    margin-bottom: 6px;
+}
+
+.fb-lead-item input,
+.fb-lead-item select {
+    font-size: 13px;
+}
+
+.campo-outro {
+    grid-column: 1 / -1;
+}
+
+.campo-outro input {
+    font-size: 13px;
+    border-color: #A5B4FC;
+    background: #EEF2FF;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 999;
+    background: #16A34A;
+}
+
+.toast.show {
+    opacity: 1;
+}
