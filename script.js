@@ -234,10 +234,10 @@ function gerarPDF() {
 
             // Tag de situação à direita
             if (sit === 'locado') {
-                doc.setTextColor(22, 163, 74);
+                doc.setTextColor(255, 0, 0);
                 doc.text('LOCADO', pW - mL, y, { align: 'right' });
             } else if (sit === 'baixado') {
-                doc.setTextColor(220, 38, 38);
+                doc.setTextColor(0, 0, 0);
                 doc.text('BAIXADO', pW - mL, y, { align: 'right' });
             }
             y += 6;
