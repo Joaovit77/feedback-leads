@@ -273,25 +273,86 @@ textarea:focus {
     background: #FFFBEB;
 }
 
+.fb-leads-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 16px 0 8px;
+}
+
+.fb-leads-heading p {
+    font-size: 12px;
+    color: var(--hint);
+    margin-top: 3px;
+}
+
 .fb-leads-titulo {
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--muted);
-    margin-bottom: 6px;
+}
+
+.fb-add-leads {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 100px auto;
+    gap: 8px;
+    align-items: end;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #BFDBFE;
+    border-radius: var(--radius);
+    background: #EFF6FF;
+}
+
+.fb-add-leads input,
+.fb-add-leads select {
+    background: #fff;
+}
+
+.btn-batch {
+    height: 37px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: var(--radius);
+    background: #2563EB;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-batch:hover {
+    background: #1D4ED8;
 }
 
 .fb-lead-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    gap: 8px;
-    align-items: start;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 8px 10px;
-    margin-bottom: 6px;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.fb-lead-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.fb-lead-top span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.fb-lead-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
 }
 
 .fb-lead-item input,
@@ -299,16 +360,40 @@ textarea:focus {
     font-size: 13px;
 }
 
-.campo-outro {
-    grid-column: 1 / -1;
+.campo-outro,
+.campo-portal-outro,
+.campo-relatorio {
+    margin-top: 9px;
 }
 
-.campo-outro input {
+.campo-outro input,
+.campo-portal-outro input {
     font-size: 13px;
     border-color: #A5B4FC;
     background: #EEF2FF;
 }
 
+.campo-relatorio textarea {
+    min-height: 58px;
+    resize: vertical;
+    font-size: 13px;
+    line-height: 1.4;
+    background: #FAFAF9;
+}
+
+@media (max-width: 680px) {
+    .fb-add-leads {
+        grid-template-columns: 1fr 90px;
+    }
+
+    .btn-batch {
+        grid-column: 1 / -1;
+    }
+
+    .fb-lead-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .form-footer {
     display: flex;
     justify-content: flex-end;
@@ -316,6 +401,207 @@ textarea:focus {
     margin-top: 1.5rem;
 }
 
+.autosave-status {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--bg);
+}
+
+.btn-duplicar,
+.btn-duplicar-lead {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-duplicar:hover,
+.btn-duplicar-lead:hover {
+    background: #F3F4F6;
+    color: var(--text);
+}
+
+.fb-lead-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.painel-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.painel-heading {
+    margin-bottom: 12px;
+}
+
+.painel-heading h2 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.painel-heading p {
+    font-size: 12px;
+    color: var(--hint);
+}
+
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.metrica {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #FAFAF9;
+}
+
+.metrica span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.metrica strong {
+    font-size: 22px;
+}
+
+.metrica.destaque {
+    color: #166534;
+    border-color: #BBF7D0;
+    background: #F0FDF4;
+}
+
+.ranking-portais {
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.ranking-portais h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.portal-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 28px;
+    gap: 9px;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.portal-bar {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #E5E7EB;
+}
+
+.portal-bar i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #2563EB;
+}
+
+.portal-row strong {
+    text-align: right;
+}
+
+.estado-vazio {
+    padding: 14px;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+    color: var(--hint);
+    font-size: 12px;
+    text-align: center;
+}
+
+.historico-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 12px;
+    margin-bottom: 7px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #FAFAF9;
+}
+
+.historico-item > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.historico-item strong {
+    font-size: 13px;
+}
+
+.historico-item span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.historico-acoes {
+    display: flex;
+    gap: 6px;
+}
+
+.historico-acoes button {
+    padding: 5px 9px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.historico-acoes .perigo {
+    color: #B91C1C;
+}
+
+@media (max-width: 680px) {
+    .autosave-status {
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .metricas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metrica.destaque {
+        grid-column: 1 / -1;
+    }
+
+    .portal-row {
+        grid-template-columns: 95px 1fr 24px;
+    }
+
+    .historico-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
 .toast {
     position: fixed;
     bottom: 1.5rem;
